@@ -21,6 +21,7 @@ class DatoContactoController extends Controller
      */
     public function index()
     {
+        return view('DatoContacto.index');
     }
 
     /**
