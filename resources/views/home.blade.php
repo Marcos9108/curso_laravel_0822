@@ -25,6 +25,12 @@
                     <div>
                         <a href="{{ route('datoContacto.index') }}" class="btn btn-info btn-block" >{{trans('app.home.go_to_contact_info')}}</a>
                     </div>
+                        <br>
+                    <div>
+                        <a href="{{route('pelicula.index')}}" class="btn btn-info btn-block" > Peliculas </a>
+                    </div>
+
+
 
                 </div>
             </div>
