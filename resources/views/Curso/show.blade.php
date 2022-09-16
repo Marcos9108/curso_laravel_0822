@@ -25,7 +25,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>ID del curso: {{$curso->id}}</label>
+                                    <label>ID: {{$curso->id}}</label>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label> Duracion: {{$curso->duracion}} horas</label>
+                                    <label> Duracion: {{$curso->duracion}}</label>
                                 </div>
                             </div>
                         </div>
