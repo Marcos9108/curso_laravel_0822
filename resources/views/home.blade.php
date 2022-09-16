@@ -27,7 +27,7 @@
                     </div>
                         <br>
                     <div>
-                        <a href="{{route('cursos.index')}}" class="btn btn-info btn-block" > Cursos </a>
+                        <a href="{{route('curso.index')}}" class="btn btn-info btn-block" > Cursos </a>
                     </div>
 
 

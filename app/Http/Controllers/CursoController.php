@@ -14,7 +14,7 @@ class CursoController extends Controller
      */
     public function index()
     {
-        $peliculas = Curso::orderBy('id', 'DESC')->get();
+        $curso = Curso::orderBy('id', 'DESC')->get();
 
         return view('Curso.index',compact('curso'));
     }
