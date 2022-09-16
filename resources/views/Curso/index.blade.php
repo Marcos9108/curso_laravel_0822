@@ -7,7 +7,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <div>
-                            <h3> Listado Peliculas</h3>
+                            <h3> Listado de Cursos</h3>
                         </div>
 
                         @if(\Illuminate\Support\Facades\Session::has('success'))
@@ -27,7 +27,7 @@
                                 <th>ID</th>
                                 <th>Curso</th>
                                 <th>Instructor</th>
-                                <th>Duración</th>
+                                <th>Duración(horas)</th>
                                 <th>Fecha de inicio de curso</th>
                                 <th>Fecha de conclusion del curso</th>
                                 <th>Acciones</th>
