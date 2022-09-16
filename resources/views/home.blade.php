@@ -27,7 +27,7 @@
                     </div>
                         <br>
                     <div>
-                        <a href="{{route('pelicula.index')}}" class="btn btn-info btn-block" > Peliculas </a>
+                        <a href="{{route('cursos.index')}}" class="btn btn-info btn-block" > Cursos </a>
                     </div>
 
 

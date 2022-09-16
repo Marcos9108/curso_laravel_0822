@@ -49,11 +49,12 @@ Route::put('datoContacto/{datoContacto}','DatoContactoController@update')->name(
 
 Route::delete('datoContacto/{datoContacto}/{empleadoId}','DatoContactoController@destroy')->name('datoContacto.destroy');
 
-//Nuevas Rutas del CRUD Peliculas Adancho
-Route::get('/pelicula/index', 'PeliculaController@index')->name('pelicula.index');
-Route::get('/pelicula/create', 'PeliculaController@create')->name('pelicula.create');
-Route::post('/pelicula/store', 'PeliculaController@store')->name('pelicula.store');
-Route::delete('/pelicula/{pelicula}', 'PeliculaController@destroy')->name('pelicula.destroy');
-Route::get('pelicula/{pelicula}/edit','PeliculaController@edit')->name('pelicula.edit');
-Route::put('pelicula/{pelicula}','PeliculaController@update')->name('pelicula.update');
-Route::get('pelicula/{pelicula}/show','PeliculaController@show')->name('pelicula.show');
+//Rutas del CRUD curso
+Route::get('/curso/index', 'CursoController@index')->name('curso.index');
+Route::get('/curso/create', 'CursoController@create')->name('curso.create');
+Route::post('/curso/store', 'CursoController@store')->name('curso.store');
+Route::delete('/curso/{curso}', 'CursoController@destroy')->name('curso.destroy');
+Route::get('curso/{curso}/edit','CursoController@edit')->name('curso.edit');
+Route::put('curso/{curso}','CursoController@update')->name('curso.update');
+Route::get('curso/{curso}/show','CursoController@show')->name('curso.show');
+
