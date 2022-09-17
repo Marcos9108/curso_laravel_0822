@@ -22,9 +22,13 @@
                         <a href="{{route('empleado.index')}}" class="btn btn-info btn-block" > {{trans('app.home.go_to_employes')}}</a>
                     </div>
                         <br>
-                    <div>
-                        <a href="{{ route('datoContacto.index') }}" class="btn btn-info btn-block" >{{trans('app.home.go_to_contact_info')}}</a>
-                    </div>
+                        <div>
+                            <a href="{{ route('datoContacto.index') }}" class="btn btn-info btn-block" >{{trans('app.home.go_to_contact_info')}}</a>
+                        </div>
+                        <br>
+                        <div>
+                            <a href="{{ route('platillos.index') }}" class="btn btn-info btn-block" >Platillos</a>
+                        </div>
 
                 </div>
             </div>

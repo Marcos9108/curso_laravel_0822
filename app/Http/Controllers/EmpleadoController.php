@@ -23,7 +23,6 @@ class EmpleadoController extends Controller
     public function index()
     {
         $empleados = Empleado::orderBy('id', 'DESC')->get();
-
         return view('Empleado.index',compact('empleados'));
 
     }
