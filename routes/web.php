@@ -58,3 +58,16 @@ Route::get('curso/{curso}/edit','CursoController@edit')->name('curso.edit');
 Route::put('curso/{curso}','CursoController@update')->name('curso.update');
 Route::get('curso/{curso}/show','CursoController@show')->name('curso.show');
 
+
+//Rutas de Puestos
+Route::get('/puestos/index', 'PuestosController@index')->name('puestos.index');
+
+Route::get('/puestos/create', 'PuestosController@create')->name('puestos.create');
+Route::post('/puestos/store', 'PuestosController@store')->name('puestos.store');
+
+Route::get('puestos/{puestos}/edit','PuestosController@edit')->name('puestos.edit');
+Route::put('puestos/{puestos}','PuestosController@update')->name('puestos.update');
+
+Route::get('puestos/{puestos}/show','PuestosController@show')->name('puestos.show');
+
+Route::delete('/puestos/{puestos}', 'PuestosController@destroy')->name('puestos.destroy');

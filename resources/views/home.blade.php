@@ -29,8 +29,10 @@
                     <div>
                         <a href="{{route('cursos.index')}}" class="btn btn-info btn-block" > Cursos </a>
                     </div>
-
-
+                    <br>
+                    <div>
+                        <a href="{{route('puestos.index')}}" class="btn btn-info btn-block" > Puestos </a>
+                    </div>
 
                 </div>
             </div>
