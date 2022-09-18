@@ -5,9 +5,9 @@
         <section class="content">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-primary">
-                    <div class="panel-body">
+                    <div class="panel-body" >
                         <div>
-                            <h3> Listado empleados</h3>
+                            <h3 class="text-primary"> Lista de empleados Softura Solutions</h3>
                         </div>
 
                         @if(\Illuminate\Support\Facades\Session::has('success'))
@@ -15,7 +15,7 @@
                                 {{\Illuminate\Support\Facades\Session::get('success')}}
                             </div>
                         @endif
-
+                        
                         <div class="pull-right">
                             <a href="{{ route('empleado.create') }}" class="btn btn-success">Agregar empleado</a>
                         </div>

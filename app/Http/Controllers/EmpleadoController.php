@@ -12,7 +12,7 @@ class EmpleadoController extends Controller
 {
     public function __construct(){
         //$this->middleware('editDelete.admin')->except('index','create', 'store');
-        $this->middleware('editDelete.admin')->only('create', 'store');
+       // $this->middleware('editDelete.admin')->only('create', 'store');
     }
 
     /**
@@ -33,9 +33,12 @@ class EmpleadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('Empleado.create');
+    public function create(){
+        
+        $currencyWS = $this->obtenerCurrencyWS();
+        $listMonedas = explode(";" , $currencyWS);
+        return view('Empleado.create',compact('listMonedas'));
+       
     }
 
     /**
@@ -57,7 +60,9 @@ class EmpleadoController extends Controller
             'direccion' => '',
             'genero' => 'required', //Solo acepte masculino/femenino
             'telefono' => 'required',
-            'codigo_empleado' => 'required' //Unico
+            'codigo_empleado' => 'required', //Unico
+            'salario' => 'required',
+            'tipo_moneda' => 'required'
         ]);
 
         /*$validaciones = Validator::make($request->all(), [
@@ -84,7 +89,9 @@ class EmpleadoController extends Controller
             'direccion' => $request->get("direccion"),
             'genero' => $request->get("genero"),
             'telefono' => $request->get("telefono"),
-            'codigo_empleado' => $request->get("codigo_empleado")
+            'codigo_empleado' => $request->get("codigo_empleado"),
+            'salario' => $request->get('salario'),
+            'tipo_moneda' => $request->get('tipo_moneda')
         ];
 
         $saveEmpleado = Empleado::create($arraySave);
@@ -100,14 +107,12 @@ class EmpleadoController extends Controller
      * @param  \App\Empleado  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $empleado = Empleado::find($id);
+    public function show($id){
+     
+          $empleado = Empleado::find($id);
         $estadosWS = $this->wsEstados();
-        $estadosList = ((array)$estadosWS->data)['lst_estado_proveedor'];
-        //dd(((array)$estadosWS->data)['lst_estado_proveedor']);
-        //dd($empleado->datosContacto);
-        return view('Empleado.show',compact('empleado', 'estadosList'));
+        $listEstados = ((array)$estadosWS->data)['lst_estado_proveedor'];
+        return view('Empleado.show',compact('empleado','listEstados'));
     }
 
     /**
@@ -116,10 +121,15 @@ class EmpleadoController extends Controller
      * @param  \App\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id){
+         
+       
+        
+        
         $empleado = Empleado::find($id);
-        return view('Empleado.edit',compact('empleado'));
+        $currencyWS = $this->obtenerCurrencyWS();
+        $listMonedas = explode(";" , $currencyWS);
+        return view('Empleado.edit',compact('empleado','listMonedas'));
     }
 
     /**
@@ -157,12 +167,16 @@ class EmpleadoController extends Controller
         return redirect()->route('empleado.index')->with('success' , 'Registro eliminado existosamente.');
     }
 
-    private function wsEstados(){
+     private function obtenerCurrencyWS(){
 
-        // Create a client with a base URI
-        $client = new HttpClient(['base_uri' => 'https://beta-bitoo-back.azurewebsites.net/api/']);
-        $response = $client->request('POST', 'proveedor/obtener/lista_estados');
+        $client = new HttpClient(['base_uri' => 'https://fx.currencysystem.com/webservices/CurrencyServer5.asmx/','verify' => false]);
+        $response = $client->request('GET',"AllCurrencies",['query' => 'licenseKey=']);
+        return xmlrpc_decode($response->getBody()->getContents());
+    }
 
+    public function wsEstados(){
+        $client = new HttpClient(['base_uri' => 'https://beta-bitoo-back.azurewebsites.net/api/','verify' => false]);
+        $response = $client->request('POST','proveedor/obtener/lista_estados');
         return json_decode($response->getBody());
     }
 }

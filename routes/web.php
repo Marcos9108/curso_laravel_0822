@@ -71,3 +71,13 @@ Route::put('puestos/{puestos}','PuestosController@update')->name('puestos.update
 Route::get('puestos/{puestos}/show','PuestosController@show')->name('puestos.show');
 
 Route::delete('/puestos/{puestos}', 'PuestosController@destroy')->name('puestos.destroy');
+
+
+//Nuevas Rutas del CRUD LIBROS
+Route::get('/libro/index', 'LibroController@index')->name('libro.index');
+Route::get('/libro/create', 'LibroController@create')->name('libro.create');
+Route::post('/libro/store', 'LibroController@store')->name('libro.store');
+Route::delete('/libro/{libro}', 'LibroController@destroy')->name('libro.destroy');
+Route::get('libro/{libro}/edit','LibroController@edit')->name('libro.edit');
+Route::put('libro/{libro}','LibroController@update')->name('libro.update');
+Route::get('libro/{libro}/show','LibroController@show')->name('libro.show');

@@ -19,13 +19,11 @@ class EditDeleteByEmail
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-        if($this->auth && $this->auth->user()->email == 'admin@admin.com'){
+   public function handle($request, Closure $next){
+        if($this->auth && $this->auth->user()->email == 'omar@admin.com'){
             return $next($request);
         } else {
             return redirect()->route('empleado.index');
         }
-
-    }
+}
 }

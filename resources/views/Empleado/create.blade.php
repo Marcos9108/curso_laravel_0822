@@ -67,6 +67,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label> {{ trans('forms.form_create.address') }} </label>
                                         <input type="direccion" id="direccion" name="direccion" placeholder="direccion" value="{{ old('direccion') }}">
                                     </div>
                                 </div>
@@ -75,17 +76,37 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label> {{ trans('forms.form_create.email') }} </label>
                                         <input type="email" id="correo" name="correo" placeholder="correo" value="{{ old('correo') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label> {{ trans('forms.form_create.phone') }} </label>
                                         <input type="telefono" id="telefono" name="telefono" placeholder="telefono" value="{{ old('telefono') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label> {{ trans('forms.form_create.code') }} </label>
                                         <input type="codigo_empleado" id="codigo_empleado" name="codigo_empleado" placeholder="codigo_empleado" value="{{ old('codigo_empleado') }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label> {{ trans('forms.form_create.salary') }} </label>
+                                        <input type="number" name="salario" id="salario" class="form-control input-sm" placeholder="Salario" value="{{ old('salario') }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label> {{ trans('forms.form_create.currency') }} </label>
+                                        <select class="form-control" id="tipo_moneda" name="tipo_moneda">
+                                            <option value=""> >--Seleccione Tipo de Moneda--< </option>
+                                        @foreach($listMonedas as $moneda)
+                                            <option value="{{$moneda}}">{{$moneda}}</option>
+                                        @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>
