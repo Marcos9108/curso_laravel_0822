@@ -25,14 +25,9 @@
                     <div>
                         <a href="{{ route('datoContacto.index') }}" class="btn btn-info btn-block" >{{trans('app.home.go_to_contact_info')}}</a>
                     </div>
-                        <br>
                     <div>
-                        <a href="{{route('cursos.index')}}" class="btn btn-info btn-block" > Cursos </a>
-                    </div>
-                    <br>
-                    <div>
-                        <a href="{{route('puestos.index')}}" class="btn btn-info btn-block" > Puestos </a>
-                    </div>
+                        <a href="{{ route('libro.index') }}" class="btn btn-info btn-block" > Libros</a>
+                    </div>    
 
                 </div>
             </div>
