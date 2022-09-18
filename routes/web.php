@@ -71,3 +71,12 @@ Route::put('puestos/{puestos}','PuestosController@update')->name('puestos.update
 Route::get('puestos/{puestos}/show','PuestosController@show')->name('puestos.show');
 
 Route::delete('/puestos/{puestos}', 'PuestosController@destroy')->name('puestos.destroy');
+
+//Rutas de Ropa
+Route::get      ('/ropa/index',     'RopaController@index')->name('ropa.index');
+Route::get      ('/ropa/create',    'RopaController@create')->name('ropa.create');
+Route::post     ('/ropa/store',     'RopaController@store')->name('ropa.store');
+Route::delete   ('/ropa/{ropa}',    'RopaController@destroy')->name('ropa.destroy');
+Route::get      (' ropa/{ropa}/edit','RopaController@edit')->name('ropa.edit');
+Route::put      (' ropa/{ropa}',    'RopaController@update')->name('ropa.update');
+Route::get      (' ropa/{ropa}/show','RopaController@show')->name('ropa.show');

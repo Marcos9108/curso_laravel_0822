@@ -13,13 +13,15 @@ class CreateCursoTable extends Migration
      */
     public function up()
     {
-        Schema::create('curso', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('ropa', function (Blueprint $table) {
+            $table->increments('pedido');
             $table->timestamps();
-            $table->string('nombre',50);
-            $table->string('instructor',50);
-            $table->date('fecha_inicio')->nullable();
-            $table->date('fecha_fin');
+            $table->string('ropa',20);
+            $table->string('talla',20);
+            $table->date('genero');
+            $table->date('marca');
+            $table->date('cantidad');
+            $table->date('color');
         });
     }
 
@@ -30,6 +32,6 @@ class CreateCursoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('curso');
+        Schema::dropIfExists('ropa');
     }
 }
